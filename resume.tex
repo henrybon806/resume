@@ -1,9 +1,190 @@
-% resume.tex
-\documentclass[11pt]{article}
-\usepackage[margin=0.75in]{geometry}
-\usepackage[hidelinks]{hyperref}
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{fontawesome5} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[2]{\item\small{\textbf{#1}{: #2 \vspace{-2pt}}}}
+\newcommand{\resumeItemNH}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
 \begin{document}
-\centerline{\textbf{Henry Bonomolo — Resume}}
-\centerline{\href{mailto:henry@henrybonomolo.com}{hbono@berkeley.com} • henrybonomolo.com}
-% ... your sections ...
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Henry J. Bonomolo} & 
+  \raisebox{-0.05\height}{\textcolor{gray}{\Large\faEnvelope}}\hspace{5pt}\href{mailto:hbono@berkeley.edu}{hbono@berkeley.edu} $|$
+  \raisebox{-0.05\height}{\textcolor{gray}{\Large\faPhone}}\hspace{5pt}(520) 279-1761 \\
+  \multicolumn{2}{l}{
+    \raisebox{-0.05\height}{\textcolor{teal}{\Large\faGlobe}}\hspace{5pt}\href{https://henrybonomolo.com}{henrybonomolo.com} $|$ 
+    \raisebox{-0.05\height}{\textcolor{purple!70!black}{\Large\faGithub}}\hspace{5pt}\href{https://github.com/henrybon806}{github.com/henrybon806} $|$ 
+    \raisebox{-0.05\height}{\textcolor{blue!70!black}{\Large\faLinkedin}}\hspace{5pt}\href{https://linkedin.com/in/henrybonomolo}{linkedin.com/in/henrybonomolo}
+  }
+\end{tabular*}
+
+%-----------SUMMARY-----------------
+\section{Summary}
+To apply my technical expertise, problem-solving skills, and leadership in software engineering to advance my studies and career in STEM fields.
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of California, Berkeley}{Berkeley, CA}
+    {B.A. in Computer Science; GPA: 3.68 (Major)}{Anticipated May 2027}
+    \resumeItemListStart
+      \resumeItem{Relevant Coursework}{Data Structures, Algorithms, Artificial Intelligence, Linear Algebra, Discrete Mathematics.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Technical Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {React Native Developer, Mobile Developers of Berkeley}{Berkeley, CA}
+    {Aug 2024 -- Present}{}
+    \resumeItemListStart
+      \resumeItemNH{Completed intensive training in \textbf{React Native} and \textbf{Swift}, focusing on \textbf{ML integrations} for production-ready mobile apps.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Solar Data API Intern, Energesque}{Los Angeles, CA}
+    {Aug 2024 -- May 2025}{}
+    \resumeItemListStart
+      \resumeItemNH{Built solar data \textbf{APIs and pipelines} processing irradiance data for \textbf{ML forecasting models}.}
+      \resumeItemNH{Developed a \textbf{Java} program to convert JSON files to CSV/TSV for efficient data normalization.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {EKG Research Developer, Univ. of Arizona ECE/BME}{Tucson, AZ}
+    {May 2023 -- Present}{}
+    \resumeItemListStart
+      \resumeItemNH{Developed an \textbf{Android EKG app} with \textbf{BLE integration} computing \textbf{RMSSD} for human trials.}
+      \resumeItemNH{Collaborated in a 3-person team to deliver a full mobile health data collection system for research deployment.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {President \& Lead Programmer, FIRST Tech Challenge}{Tucson, AZ}
+    {Aug 2020 -- May 2024}{}
+    \resumeItemListStart
+      \resumeItemNH{Led 20-member team to \textbf{1st place at State Championships (3 consecutive years)}.}
+      \resumeItemNH{Architected autonomous \textbf{Java} codebase achieving top performance rankings statewide.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Primary Projects}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Spike Inclusive | React Native, BLE, iOS}{}
+    {Jan 2023 -- Present}{}
+    \resumeItemListStart
+      \resumeItemNH{iPad app enabling students with disabilities to program LEGO robots via a custom \textbf{BLE command layer}.}
+      \resumeItemNH{Published on the \textbf{App Store} and integrated in district curricula, serving \textbf{100+ students}.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {ARES | Python, ReactJS, Azure Cosmos DB}{}
+    {Jan 2024 -- Present}{}
+    \resumeItemListStart
+      \resumeItemNH{Real-time FTC statistics platform + Discord bot serving \textbf{500+ teams nationwide}.}
+      \resumeItemNH{Built scalable backend on \textbf{Azure} for match analytics and OPR rankings via REST API.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {FitRealm | React Native, Supabase, OpenAI API}{}
+    {Jan 2025 -- May 2025}{}
+    \resumeItemListStart
+      \resumeItemNH{Developed a \textbf{gamified fitness app} with AI-generated workouts, social guilds, and progress tracking.}
+      \resumeItemNH{Integrated the \textbf{OpenAI API} for personalized quest generation and behavior reinforcement.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Hoax Hunter | Swift, Create ML}{}
+    {Aug 2023 -- Nov 2023}{}
+    \resumeItemListStart
+      \resumeItemNH{Fact-checking iOS app with a custom \textbf{ML model} trained on 100+ curated news articles; published on the \textbf{App Store}.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------LEADERSHIP-----------------
+\section{Leadership \& Activities}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Coach \& Judge, FIRST LEGO League}{Tucson, AZ}
+    {Aug 2020 -- Present}{}
+    \resumeItemListStart
+      \resumeItemNH{Mentored teams to \textbf{first-place finishes} in programming and robot design at regional and state competitions.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Lifeguard \& Swim Instructor, City of Tucson / Amphitheater HS}{Tucson, AZ}
+    {Mar 2023 -- Oct 2024}{}
+    \resumeItemListStart
+      \resumeItemNH{Taught swimming and water safety to \textbf{200+ students}.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Teacher, Manyatta Primary School}{Kenya}
+    {May 2022 -- Aug 2022}{}
+    \resumeItemListStart
+      \resumeItemNH{Taught K–8 classes and organized fundraisers supporting \textbf{30+ rural students}.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------AWARDS-----------------
+\section{Awards \& Achievements}
+\resumeSubHeadingListStart
+  \resumeItemNH{\textbf{National Hispanic Scholar} (2023) · \textbf{AP Scholar with Distinction} (2022–24).}
+  \resumeItemNH{\textbf{Oracle Java Certified Foundations Associate} (2023) — Validates fluency in Java programming fundamentals.}
+  \resumeItemNH{\textbf{FIRST LEGO League Mentor \& Coach Award} (2023) — Recognized for robotics mentorship excellence.}
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \resumeItem{Languages}{Java, Python, Swift, JavaScript, SQL, HTML/CSS.}
+  \resumeItem{Frameworks}{React Native, React, Node.js, NumPy, Pandas.}
+  \resumeItem{Tools/Platforms}{GitHub, Firebase, MongoDB, AWS KDS, Azure Cosmos, Supabase, Xcode, Android Studio, Cloud Databases.}
+\resumeSubHeadingListEnd
+
 \end{document}
