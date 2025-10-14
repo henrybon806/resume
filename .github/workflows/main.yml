@@ -1,0 +1,54 @@
+# .github/workflows/build-pages.yml
+name: Build LaTeX and Deploy to Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Compile resume.tex -> resume.pdf
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          # uncomment for xelatex if you use custom fonts:
+          # latexmk_use_xelatex: true
+
+      # Stage for Pages
+      - name: Prepare dist
+        run: |
+          mkdir -p dist
+          cp resume.pdf dist/
+          # optional: auto-open PDF if someone hits the root URL
+          cat > dist/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=resume.pdf">
+          <title>Resume</title>
+          HTML
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
