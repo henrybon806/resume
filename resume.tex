@@ -1,14 +1,52 @@
+% !TEX program = xelatex
 \documentclass[letterpaper,11pt]{article}
-
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  hidelinks,
+  pdfborder={0 0 0},
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black,
+  citecolor=black
+}
 \usepackage{fancyhdr}
 \usepackage{multirow}
 \usepackage{xcolor}
-\usepackage{fontawesome5} 
+\usepackage{fontawesome5}
+
+% ---------- Emoji/Icon support ----------
+% Previously used fontspec+system emoji (Xe/Lua only). For pdfLaTeX we use image icons.
+% If you prefer XeLaTeX, uncomment fontspec and the lines below and compile with xelatex.
+% \usepackage{fontspec}
+% \newfontfamily\emoji{Apple Color Emoji}
+% \newcommand{\emo}[1]{{\emoji #1}}
+
+% Use graphicx to include vector/bitmap icons under icons/ (pdf/png).
+\usepackage{graphicx}
+% Macro: \emoji[<scale>]{<filename-with-ext>} — height is scale * \baselineskip
+\newcommand{\emoji}[2][0.9]{%
+  \raisebox{-0.15\height}{\includegraphics[height=#1\baselineskip]{icons/#2}}%
+}
+\newcommand{\iconEmail}{%
+  \IfFileExists{icons/envelope.pdf}{\emoji[0.95]{envelope.pdf}}{\raisebox{-0.05\height}{\textcolor{gray}{\Large\faEnvelope}}}%
+}
+\newcommand{\iconPhone}{%
+  \IfFileExists{icons/phone.pdf}{\emoji[0.95]{phone.pdf}}{\raisebox{-0.05\height}{\textcolor{gray}{\Large\faPhone}}}%
+}
+\newcommand{\iconSite}{%
+  \IfFileExists{icons/globe.pdf}{\emoji[0.95]{globe.pdf}}{\raisebox{-0.05\height}{\textcolor{teal}{\Large\faGlobe}}}%
+}
+\newcommand{\iconGit}{%
+  \IfFileExists{icons/github.pdf}{\emoji[0.95]{github.pdf}}{\raisebox{-0.05\height}{\textcolor{purple!70!black}{\Large\faGithub}}}%
+}
+\newcommand{\iconLink}{%
+  \IfFileExists{icons/linkedin.pdf}{\emoji[0.95]{linkedin.pdf}}{\raisebox{-0.05\height}{\textcolor{blue!70!black}{\Large\faLinkedin}}}%
+}
+% ----------------------------------------------------------------------
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -21,6 +59,9 @@
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
+
+% ensure footskip is large enough for fancyhdr
+\setlength{\footskip}{12pt}
 
 \urlstyle{same}
 
@@ -51,13 +92,14 @@
 \begin{document}
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Henry J. Bonomolo} & 
-  \raisebox{-0.05\height}{\textcolor{gray}{\Large\faEnvelope}}\hspace{5pt}\href{mailto:hbono@berkeley.edu}{hbono@berkeley.edu} $|$
-  \raisebox{-0.05\height}{\textcolor{gray}{\Large\faPhone}}\hspace{5pt}(520) 279-1761 \\
+  	\bf{\Large Henry J. Bonomolo} & 
+  \href{mailto:hbono@berkeley.edu}{hbono@berkeley.edu} $|$
+  (520) 279-1761 \\
   \multicolumn{2}{l}{
-    \raisebox{-0.05\height}{\textcolor{teal}{\Large\faGlobe}}\hspace{5pt}\href{https://henrybonomolo.com}{henrybonomolo.com} $|$ 
-    \raisebox{-0.05\height}{\textcolor{purple!70!black}{\Large\faGithub}}\hspace{5pt}\href{https://github.com/henrybon806}{github.com/henrybon806} $|$ 
-    \raisebox{-0.05\height}{\textcolor{blue!70!black}{\Large\faLinkedin}}\hspace{5pt}\href{https://linkedin.com/in/henrybonomolo}{linkedin.com/in/henrybonomolo}
+    \href{https://henrybonomolo.com}{henrybonomolo.com} $|$ 
+    \href{https://github.com/henrybon806}{github.com/henrybon806} $|$ 
+    \href{https://linkedin.com/in/henrybonomolo}{linkedin.com/in/henrybonomolo} $|$ 
+    \href{https://linkedin.com/in/henrybonomolo}{leetcode.com}
   }
 \end{tabular*}
 
@@ -79,6 +121,14 @@ To apply my technical expertise, problem-solving skills, and leadership in softw
 %-----------EXPERIENCE-----------------
 \section{Technical Experience}
 \resumeSubHeadingListStart
+  \resumeSubheading
+    {Autonomous Systems Lab Assistant, Lawrence National Laboratory}{Berkeley, CA}
+    {September 2025 -- Present}{}
+    \resumeItemListStart
+      \resumeItemNH{Led 20-member team to \textbf{1st place at State Championships (3 consecutive years)}.}
+      \resumeItemNH{Architected autonomous \textbf{Java} codebase achieving top performance rankings statewide.}
+    \resumeItemListEnd
+
   \resumeSubheading
     {React Native Developer, Mobile Developers of Berkeley}{Berkeley, CA}
     {Aug 2024 -- Present}{}
@@ -114,6 +164,13 @@ To apply my technical expertise, problem-solving skills, and leadership in softw
 %-----------PROJECTS-----------------
 \section{Primary Projects}
 \resumeSubHeadingListStart
+  \resumeSubheading
+    {Flow Kode | Agentic AI, Typescript}{}
+    {Aug 2023 -- Nov 2023}{}
+    \resumeItemListStart
+      \resumeItemNH{Fact-checking iOS app with a custom \textbf{ML model} trained on 100+ curated news articles; published on the \textbf{App Store}.}
+    \resumeItemListEnd
+
   \resumeSubheading
     {Spike Inclusive | React Native, BLE, iOS}{}
     {Jan 2023 -- Present}{}
@@ -161,13 +218,6 @@ To apply my technical expertise, problem-solving skills, and leadership in softw
     {Mar 2023 -- Oct 2024}{}
     \resumeItemListStart
       \resumeItemNH{Taught swimming and water safety to \textbf{200+ students}.}
-    \resumeItemListEnd
-
-  \resumeSubheading
-    {Teacher, Manyatta Primary School}{Kenya}
-    {May 2022 -- Aug 2022}{}
-    \resumeItemListStart
-      \resumeItemNH{Taught K–8 classes and organized fundraisers supporting \textbf{30+ rural students}.}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
