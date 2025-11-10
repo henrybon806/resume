@@ -19,6 +19,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
@@ -161,8 +163,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
-INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT resume.aux
 INPUT ./resume.out
